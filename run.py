@@ -80,7 +80,7 @@ def get_gear(data):
     for gear in parsed_data['gear_stock']:
         print(f"\tName: {gear['display_name']}\n\t\tQuantity: {gear['quantity']}")
         log_item(gear["display_name"], gear["quantity"])
-        important_items = ["Medium Toy" ,"Medium Treat", "Levelup Lolipop", "Godly Sprinkler", "Master Sprinkler"] 
+        important_items = ["Medium Toy" ,"Medium Treat", "Levelup Lolipop", "Godly Sprinkler", "Master Sprinkler", "Grandmaster Sprinkler"] 
         if gear["display_name"] in important_items:
             play_alarm(gear["display_name"])
 
@@ -190,8 +190,8 @@ def main():
             trigger("Seed & Gear Shop Restock","seed_gear")
         if minute % 30 == 0:
             trigger("Egg Shop Restock","egg")
-        if hour % 1 == 0 and minute == 0:
-            trigger("Event Shop Restock", "event")
+        # if hour % 1 == 0 and minute == 0:
+            # trigger("Event Shop Restock", "event")
         if hour % 4 == 0 and minute == 0:
             trigger("Cosmetic Shop Restock","cosmetic")
         # check weather
